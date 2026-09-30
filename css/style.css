@@ -1,0 +1,325 @@
+@charset "UTF-8";
+
+/* ==========
+   共通
+========== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: "Noto Serif JP", "Yu Mincho", serif;
+  color: #222;
+  background: #fff;
+  line-height: 1.8;
+}
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+
+.inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ==========
+   ヘッダー
+========== */
+.header {
+  background: #1c2a3f;
+  color: #fff;
+}
+.header-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.logo {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+.gnav ul {
+  display: flex;
+  gap: 32px;
+}
+.gnav a:hover { opacity: 0.7; }
+.menu-btn {
+  display: none;
+  background: none;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 4px 12px;
+  font-size: 12px;
+}
+
+/* ==========
+   メインビジュアル
+========== */
+.mv {
+  height: 420px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #2b3d57, #1c2a3f);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+/* 写真(images/mv.jpg)は案内文より上の層に表示されるため、写真を入れると案内文は自動で隠れる */
+.mv-photo {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: url("../images/mv.jpg") center / cover no-repeat;
+  filter: brightness(0.55); /* 白い文字を読みやすくするため写真を暗くする */
+}
+.mv-text {
+  position: relative;
+  z-index: 2;
+}
+.mv .photo-slot {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 20px;
+  color: #b8c3d4;
+}
+
+/* 写真の入る場所の案内文 */
+.photo-slot {
+  font-size: 13px;
+  line-height: 1.6;
+  text-align: center;
+}
+.photo-slot small {
+  display: block;
+  font-size: 11px;
+  opacity: 0.8;
+  font-family: Consolas, monospace;
+}
+
+.mv-sub {
+  font-size: 14px;
+  letter-spacing: 0.3em;
+  margin-bottom: 12px;
+}
+.mv h1 {
+  font-size: 36px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  line-height: 1.6;
+}
+
+.page-title {
+  background: #1c2a3f;
+  color: #fff;
+  text-align: center;
+  padding: 48px 20px;
+  border-top: 1px solid #34465f;
+}
+.page-title h1 {
+  font-size: 26px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+}
+
+/* ==========
+   セクション
+========== */
+.section { padding: 64px 0; }
+.bg-gray { background: #f4f4f2; }
+.sec-title {
+  font-size: 22px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 32px;
+  letter-spacing: 0.15em;
+}
+.sec-title::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: #a8322d;
+  margin: 12px auto 0;
+}
+.text {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.course-box {
+  display: flex;
+  gap: 24px;
+}
+.course-item {
+  flex: 1;
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 32px 24px;
+  text-align: center;
+}
+.course-img {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  max-width: 100%;
+  margin: -32px -24px 24px;
+  background: #e5e5e0;
+  color: #777;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* 写真は案内文の上に重なるため、写真を入れると案内文は自動で隠れる */
+.course-img::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: center / cover no-repeat;
+}
+.course-img-omakase::after { background-image: url("../images/omakase.jpg"); }
+.course-img-okimari::after { background-image: url("../images/okimari.jpg"); }
+.course-item h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+.course-price {
+  color: #a8322d;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.notice {
+  max-width: 720px;
+  margin: 40px auto 0;
+  border: 1px solid #a8322d;
+  padding: 20px 24px;
+  text-align: center;
+}
+.notice-title {
+  color: #a8322d;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.note-top {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.btn-wrap {
+  text-align: center;
+  margin-top: 40px;
+}
+.btn {
+  display: inline-block;
+  background: #1c2a3f;
+  color: #fff;
+  padding: 12px 48px;
+}
+.btn:hover { opacity: 0.8; }
+
+/* ==========
+   お品書き
+========== */
+.menu-table {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto 56px;
+  border-collapse: collapse;
+}
+.menu-table th,
+.menu-table td {
+  padding: 14px 8px;
+  border-bottom: 1px dotted #aaa;
+  text-align: left;
+}
+.menu-table th { width: 30%; font-weight: 600; }
+.menu-table .price { text-align: right; white-space: nowrap; }
+.note {
+  max-width: 720px;
+  margin: 0 auto;
+  font-size: 13px;
+  color: #666;
+}
+
+/* ==========
+   店舗案内
+========== */
+.info-table {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto 40px;
+  border-collapse: collapse;
+}
+.info-table th,
+.info-table td {
+  border: 1px solid #ddd;
+  padding: 14px 16px;
+  text-align: left;
+}
+.info-table th {
+  width: 28%;
+  background: #f4f4f2;
+  font-weight: 600;
+}
+.map-box {
+  max-width: 720px;
+  height: 320px;
+  margin: 0 auto;
+  background: #e5e5e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+}
+
+/* ==========
+   フッター
+========== */
+.footer {
+  background: #1c2a3f;
+  color: #ccc;
+  padding: 40px 20px;
+  font-size: 13px;
+  text-align: center;
+}
+.footer-name {
+  font-size: 18px;
+  color: #fff;
+  margin-bottom: 8px;
+}
+.copy {
+  margin-top: 16px;
+  font-size: 11px;
+}
+
+/* ==========
+   スマホ
+========== */
+@media screen and (max-width: 768px) {
+  .menu-btn { display: block; }
+  .gnav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #1c2a3f;
+    z-index: 10;
+  }
+  .gnav.is-open { display: block; }
+  .gnav ul { flex-direction: column; gap: 0; }
+  .gnav li a {
+    display: block;
+    padding: 14px 20px;
+    border-top: 1px solid #34465f;
+  }
+  .mv { height: 300px; }
+  .mv h1 { font-size: 24px; }
+  .course-box { flex-direction: column; }
+  .info-table th { width: 35%; }
+}
