@@ -19,6 +19,14 @@ ul { list-style: none; }
   padding: 0 20px;
 }
 
+.sample-bar {
+  background: #a8322d;
+  color: #fff;
+  font-size: 12px;
+  text-align: center;
+  padding: 6px 16px;
+}
+
 /* ==========
    ヘッダー
 ========== */
